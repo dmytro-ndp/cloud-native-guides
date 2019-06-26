@@ -119,7 +119,7 @@ web         1          1         1         config,image(web:latest)
 
 TIP: **dc** stands for deployment config
 
-`*Add a Liveness Probe on the Catalog Deployment Config*`:
+Add a Liveness Probe on the Catalog Deployment Config:
 
 ----
 $ oc set probe dc/catalog --liveness --initial-delay-seconds=30 --failure-threshold=3 --get-url=http://:8080/health
@@ -139,7 +139,7 @@ TIP: It is possible to customize the probes even further using for example `*--i
 to wait after the container starts and before to begin checking the probes. Run `*oc set probe --help*` to get 
 a list of all available options.
 
-`*Add a Readiness Probe on the Catalog Deployment Config*` using the same **/health** endpoint that you used for 
+Add a Readiness Probe on the Catalog Deployment Config using the same **/health** endpoint that you used for 
 the liveness probe.
 
 TIP: It's recommended to have separate endpoints for readiness and liveness to indicate to OpenShift when 
